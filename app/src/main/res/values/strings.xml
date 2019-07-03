@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Logitech</string>
+    <string name="base_url">https://api.myjson.com/</string>
+    <string name="unknown_error">Unknown Error</string>
+    <string name="error">Error!</string>
+    <string name="close">Close</string>
+    <string name="loading">Loading...</string>
 </resources>
