@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/view_parent"
+    android:layout_width="match_parent"
+    android:layout_height="250dp"
+    app:cardCornerRadius="@dimen/dimen_5_dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/img_movie"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"/>
+
+        <TextView
+            android:id="@+id/txt_title"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textSize="18sp"
+            android:text="Raja"
+            android:background="#99000000"
+            android:layout_alignParentBottom="true"
+            android:textColor="@android:color/white"
+            android:paddingLeft="@dimen/dimen_5_dp"
+            android:paddingRight="@dimen/dimen_5_dp"/>
+
+
+    </RelativeLayout>
+
+
+</android.support.v7.widget.CardView>

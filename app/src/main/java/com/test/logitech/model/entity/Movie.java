@@ -1,10 +1,10 @@
 package com.test.logitech.model.entity;
 
+import android.support.annotation.NonNull;
+
 import com.google.gson.annotations.SerializedName;
 
-import java.util.List;
-
-public class Movie {
+public class Movie implements Comparable<Movie> {
 
     @SerializedName("Title")
     public String title;
@@ -56,4 +56,11 @@ public class Movie {
     public String website;
     @SerializedName("Response ")
     public String response;
+
+    @Override
+    public int compareTo(@NonNull Movie movie) {
+        if (this.title != null && movie.title != null)
+            return this.title.compareTo(movie.title);
+        return 0;
+    }
 }
