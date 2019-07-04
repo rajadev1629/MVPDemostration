@@ -1,8 +1,9 @@
 package com.test.logitech.presenter;
 
+import com.test.logitech.AppInstance;
+import com.test.logitech.R;
 import com.test.logitech.model.entity.MovieList;
 import com.test.logitech.presenter.presenterinterface.HomeScreenPresenter;
-import com.test.logitech.utils.ConnectionUtils;
 import com.test.logitech.view.viewinterface.HomeScreenView;
 
 import java.util.Collections;
@@ -19,8 +20,8 @@ public class HomeScreenPresenterImpl extends BasePresenter<HomeScreenView> imple
         if (view == null)
             return;
 
-        if (!ConnectionUtils.isInternetAvailable()) {
-            view.showError("No Internet Connection");
+        if (isNotNetworkAvailable()) {
+            view.showError(AppInstance.getInstance().getString(R.string.error_connection));
             return;
         }
 
@@ -37,7 +38,6 @@ public class HomeScreenPresenterImpl extends BasePresenter<HomeScreenView> imple
                     Collections.sort(movieData.movies);
                     view.setData(movieData.movies);
                 }
-
             }
 
             @Override

@@ -1,10 +1,12 @@
 package com.test.logitech.model.entity;
 
+import android.os.Parcel;
+import android.os.Parcelable;
 import android.support.annotation.NonNull;
 
 import com.google.gson.annotations.SerializedName;
 
-public class Movie implements Comparable<Movie> {
+public class Movie implements Comparable<Movie>, Parcelable {
 
     @SerializedName("Title")
     public String title;
@@ -63,4 +65,79 @@ public class Movie implements Comparable<Movie> {
             return this.title.compareTo(movie.title);
         return 0;
     }
+
+    protected Movie(Parcel in) {
+        title = in.readString();
+        year = in.readString();
+        rated = in.readString();
+        released = in.readString();
+        runtime = in.readString();
+        genre = in.readString();
+        director = in.readString();
+        writer = in.readString();
+        actors = in.readString();
+        plot = in.readString();
+        language = in.readString();
+        country = in.readString();
+        awards = in.readString();
+        poster = in.readString();
+        ratings = in.readString();
+        metascore = in.readString();
+        imdbRating = in.readString();
+        imdbVotes = in.readString();
+        imdbID = in.readString();
+        type = in.readString();
+        dVD = in.readString();
+        boxOffice = in.readString();
+        production = in.readString();
+        website = in.readString();
+        response = in.readString();
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(title);
+        dest.writeString(year);
+        dest.writeString(rated);
+        dest.writeString(released);
+        dest.writeString(runtime);
+        dest.writeString(genre);
+        dest.writeString(director);
+        dest.writeString(writer);
+        dest.writeString(actors);
+        dest.writeString(plot);
+        dest.writeString(language);
+        dest.writeString(country);
+        dest.writeString(awards);
+        dest.writeString(poster);
+        dest.writeString(ratings);
+        dest.writeString(metascore);
+        dest.writeString(imdbRating);
+        dest.writeString(imdbVotes);
+        dest.writeString(imdbID);
+        dest.writeString(type);
+        dest.writeString(dVD);
+        dest.writeString(boxOffice);
+        dest.writeString(production);
+        dest.writeString(website);
+        dest.writeString(response);
+    }
+
+    @SuppressWarnings("unused")
+    public static final Parcelable.Creator<Movie> CREATOR = new Parcelable.Creator<Movie>() {
+        @Override
+        public Movie createFromParcel(Parcel in) {
+            return new Movie(in);
+        }
+
+        @Override
+        public Movie[] newArray(int size) {
+            return new Movie[size];
+        }
+    };
 }

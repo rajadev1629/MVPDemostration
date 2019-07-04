@@ -1,9 +1,15 @@
 <resources>
-    <string name="app_name">Logitech</string>
+    <string name="app_name">Movies</string>
     <string name="base_url">https://api.myjson.com/</string>
     <string name="unknown_error">Unknown Error</string>
     <string name="error">Error!</string>
     <string name="close">Close</string>
     <string name="loading">Loading...</string>
     <string name="not_available">N/A</string>
+    <string name="error_connection">No Internet Connection</string>
+    <string name="movie_data_key">movie_data_key</string>
+    <string name="appbar_scrolling_view_behavior" translatable="false">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
+    <string name="plot">Plot</string>
+    <string name="writer">Writer</string>
+    <string name="movie_detail">Movie Detail</string>
 </resources>

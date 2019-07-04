@@ -1,7 +1,7 @@
 package com.test.logitech.view.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
@@ -10,7 +10,6 @@ import com.test.logitech.listener.OnMovieItemClickListener;
 import com.test.logitech.model.entity.Movie;
 import com.test.logitech.presenter.HomeScreenPresenterImpl;
 import com.test.logitech.presenter.presenterinterface.HomeScreenPresenter;
-import com.test.logitech.utils.DialogUtils;
 import com.test.logitech.utils.EqualSpacingItemDecoration;
 import com.test.logitech.view.adapter.MovieAdapter;
 import com.test.logitech.view.viewinterface.HomeScreenView;
@@ -20,7 +19,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class MainActivity extends AppCompatActivity implements HomeScreenView {
+public class MainActivity extends BaseActivity implements HomeScreenView {
 
     @BindView(R.id.list_view)
     RecyclerView movieListView;
@@ -47,21 +46,6 @@ public class MainActivity extends AppCompatActivity implements HomeScreenView {
     }
 
     @Override
-    public void showLoading() {
-        DialogUtils.showProgressDialog(this);
-    }
-
-    @Override
-    public void hideLoading() {
-        DialogUtils.hideProgressDialog();
-    }
-
-    @Override
-    public void showError(String errorMessage) {
-        DialogUtils.showErrorMessage(this, errorMessage);
-    }
-
-    @Override
     public void setData(List<Movie> movieList) {
         adapter.setData(movieList);
     }
@@ -76,7 +60,9 @@ public class MainActivity extends AppCompatActivity implements HomeScreenView {
         adapter.setListener(new OnMovieItemClickListener() {
             @Override
             public void onMovieClicked(Movie movie) {
-
+                Intent intent = new Intent(MainActivity.this, MovieDetailActivity.class);
+                intent.putExtra(getString(R.string.movie_data_key), movie);
+                startActivity(intent);
             }
         });
 
