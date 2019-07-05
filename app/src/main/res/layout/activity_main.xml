@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/home_background"
-    tools:context=".view.activity.MainActivity"
+    tools:context=".view.activity.HomeActivity"
     android:paddingLeft="@dimen/dimen_10_dp"
     android:paddingRight="@dimen/dimen_10_dp">
 

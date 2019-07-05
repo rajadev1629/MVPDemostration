@@ -19,7 +19,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class MainActivity extends BaseActivity implements HomeScreenView {
+public class HomeActivity extends BaseActivity implements HomeScreenView {
 
     @BindView(R.id.list_view)
     RecyclerView movieListView;
@@ -60,7 +60,7 @@ public class MainActivity extends BaseActivity implements HomeScreenView {
         adapter.setListener(new OnMovieItemClickListener() {
             @Override
             public void onMovieClicked(Movie movie) {
-                Intent intent = new Intent(MainActivity.this, MovieDetailActivity.class);
+                Intent intent = new Intent(HomeActivity.this, MovieDetailActivity.class);
                 intent.putExtra(getString(R.string.movie_data_key), movie);
                 startActivity(intent);
             }

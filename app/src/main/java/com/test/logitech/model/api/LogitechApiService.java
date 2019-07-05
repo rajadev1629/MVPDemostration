@@ -1,6 +1,6 @@
 package com.test.logitech.model.api;
 
-import com.test.logitech.model.entity.MovieList;
+import com.test.logitech.model.entity.MovieData;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
@@ -13,5 +13,5 @@ public interface LogitechApiService {
     * */
 
     @GET("bins/18buhu")
-    Call<MovieList> getMovieList();
+    Call<MovieData> getMovieList();
 }

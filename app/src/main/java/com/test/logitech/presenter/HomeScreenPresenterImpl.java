@@ -2,7 +2,7 @@ package com.test.logitech.presenter;
 
 import com.test.logitech.AppInstance;
 import com.test.logitech.R;
-import com.test.logitech.model.entity.MovieList;
+import com.test.logitech.model.entity.MovieData;
 import com.test.logitech.presenter.presenterinterface.HomeScreenPresenter;
 import com.test.logitech.view.viewinterface.HomeScreenView;
 
@@ -27,13 +27,13 @@ public class HomeScreenPresenterImpl extends BasePresenter<HomeScreenView> imple
 
         view.showLoading();
 
-        apiFacade.getApiService().getMovieList().enqueue(new Callback<MovieList>() {
+        apiFacade.getApiService().getMovieList().enqueue(new Callback<MovieData>() {
             @Override
-            public void onResponse(Call<MovieList> call, Response<MovieList> response) {
+            public void onResponse(Call<MovieData> call, Response<MovieData> response) {
                 if (view == null)
                     return;
                 view.hideLoading();
-                MovieList movieData = response.body();
+                MovieData movieData = response.body();
                 if (response.isSuccessful() && movieData != null) {
                     Collections.sort(movieData.movies);
                     view.setData(movieData.movies);
@@ -41,7 +41,7 @@ public class HomeScreenPresenterImpl extends BasePresenter<HomeScreenView> imple
             }
 
             @Override
-            public void onFailure(Call<MovieList> call, Throwable t) {
+            public void onFailure(Call<MovieData> call, Throwable t) {
 
             }
         });
