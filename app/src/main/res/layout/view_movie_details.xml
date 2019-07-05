@@ -37,9 +37,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
+            android:layout_marginLeft="@dimen/dimen_20_dp"
             android:layout_toRightOf="@id/txt_title"
-            android:gravity="right"
-            android:layout_marginLeft="@dimen/dimen_20_dp"/>
+            android:gravity="right" />
 
         <TextView
             android:id="@+id/txt_time_and_genre"
@@ -49,10 +49,40 @@
             android:layout_below="@id/txt_rate_and_date" />
 
         <LinearLayout
-            android:id="@+id/lin_plot"
+            android:id="@+id/lin_actor"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/txt_time_and_genre"
+            android:layout_marginBottom="@dimen/dimen_10_dp"
+            android:background="@color/bg_gray"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/dimen_20_dp">
+
+            <TextView
+                style="@style/text_details"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txt_title"
+                android:text="@string/actor"
+                android:textColor="@color/text_dark_gray"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:layout_marginLeft="@dimen/dimen_10_dp"/>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/list_view_name"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:listitem="@layout/view_movie_list" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lin_plot"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lin_actor"
             android:layout_marginBottom="@dimen/dimen_10_dp"
             android:background="@color/bg_gray"
             android:orientation="vertical"
@@ -77,8 +107,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/txt_title"
-                android:textColor="@color/text_gray"
-                android:layout_marginTop="@dimen/dimen_20_dp"/>
+                android:layout_marginTop="@dimen/dimen_20_dp"
+                android:textColor="@color/text_gray" />
 
         </LinearLayout>
 
@@ -107,11 +137,11 @@
             <TextView
                 android:id="@+id/txt_writer"
                 style="@style/text_details"
-                android:textColor="@color/text_gray"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/txt_title"
-                android:layout_marginTop="@dimen/dimen_20_dp"/>
+                android:layout_marginTop="@dimen/dimen_20_dp"
+                android:textColor="@color/text_gray" />
 
         </LinearLayout>
 
